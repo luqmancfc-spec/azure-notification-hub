@@ -1,5 +1,5 @@
 param location string = resourceGroup().location
-param keyVaultName string = 'kv-${uniqueString(resourceGroup().id)}'
+param keyVaultName string = 'kv-prod-${uniqueString(resourceGroup().id, deployment().name)}'
 
 // 1. Create the Key Vault to store the secret
 resource kv 'Microsoft.KeyVault/vaults@2023-07-01' = {
