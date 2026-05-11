@@ -1,5 +1,6 @@
 param location string = resourceGroup().location
-param keyVaultName string = 'kv-prod-${uniqueString(resourceGroup().id, deployment().name)}'
+param keyVaultName string = 'kv-v3-${uniqueString(resourceGroup().id, deployment().name)}'
+
 
 // 1. Create a Managed Identity for the Deployment Script
 resource scriptIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
